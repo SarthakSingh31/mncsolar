@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:www.istockphoto.com)",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:www.freepik.com)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run lint)"
+    ],
+    "deny": []
+  }
+}
