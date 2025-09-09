@@ -67,7 +67,7 @@ export default function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-base font-bold bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent leading-tight">
-                Mahadeva & Company
+                MNC Solar
               </span>
               <span className="text-xs text-slate-500 font-medium -mt-0.5">
                 Solar Solutions
