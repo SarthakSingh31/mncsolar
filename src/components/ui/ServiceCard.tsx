@@ -1,56 +1,52 @@
-import { Check } from 'lucide-react';
-import { ServiceItem } from '@/types';
+import { Zap, Battery, RefreshCw, Building2, Check, LucideIcon } from "lucide-react";
+import { ServiceItem } from "@/types";
 
-interface ServiceCardProps {
-  service: ServiceItem;
-  featured?: boolean;
-}
+const iconMap: Record<string, LucideIcon> = {
+  Zap,
+  Battery,
+  RefreshCw,
+  Building2,
+};
 
-export default function ServiceCard({ service, featured = false }: ServiceCardProps) {
+interface ServiceCardProps extends ServiceItem {}
+
+export default function ServiceCard({
+  title,
+  description,
+  features,
+  icon,
+  capacity,
+}: ServiceCardProps) {
+  const Icon = iconMap[icon] ?? Zap;
+
   return (
-    <div className={`bg-white rounded-2xl shadow-solar hover:shadow-xl relative group transition-all duration-300 hover:-translate-y-1 flex flex-col h-full ${
-      featured 
-        ? 'border-2 border-primary-200 ring-2 ring-primary-100' 
-        : 'border border-slate-200 hover:border-primary-200'
-    }`}>
-      {featured && (
-        <div className="absolute -top-2 -right-4 z-10">
-          <div className="relative">
-            <div className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-3 py-1 rounded-full shadow-lg transform rotate-12 hover:rotate-6 transition-transform duration-300">
-              <span className="text-xs font-bold tracking-wider">POPULAR</span>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-400 to-accent-500 rounded-full blur-sm opacity-50 transform rotate-12"></div>
-          </div>
-        </div>
-      )}
-      
-      <div className={`relative flex flex-col h-full p-8`}>
-        <div className="min-h-[3rem] flex items-start mb-4">
-          <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors leading-tight">{service.title}</h3>
-        </div>
-        <p className="text-slate-600 mb-6 leading-relaxed">{service.description}</p>
-        
-        <ul className="space-y-3 mb-8 flex-grow">
-          {service.features.map((feature, index) => (
-            <li key={index} className="flex items-start space-x-3">
-              <div className="bg-green-100 p-1 rounded-full mt-0.5">
-                <Check className="h-3 w-3 text-green-600" />
-              </div>
-              <span className="text-slate-700 text-sm">{feature}</span>
-            </li>
-          ))}
-        </ul>
-        
-        <a
-          href="/contact"
-          className={`w-full inline-block text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105 mt-auto ${
-            featured 
-              ? 'gradient-primary text-white shadow-solar hover:shadow-lg' 
-              : 'bg-slate-100 text-slate-700 hover:bg-primary-50 hover:text-primary-600 border border-slate-200 hover:border-primary-200'
-          }`}
-        >
-          Get Quote
-        </a>
+    <div className="flex flex-col bg-slate-light rounded-2xl border border-border p-6 gap-4">
+      {/* Icon */}
+      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-light text-amber">
+        <Icon size={24} strokeWidth={1.75} />
+      </div>
+
+      {/* Title */}
+      <h3 className="text-xl font-bold text-navy leading-snug">{title}</h3>
+
+      {/* Description */}
+      <p className="text-sm text-slate-text leading-relaxed">{description}</p>
+
+      {/* Features */}
+      <ul className="flex flex-col gap-2 flex-1">
+        {features.map((feature) => (
+          <li key={feature} className="flex items-start gap-2 text-sm text-slate-text-dark">
+            <Check size={15} className="mt-0.5 shrink-0 text-amber" strokeWidth={2.5} />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Capacity badge */}
+      <div className="mt-2">
+        <span className="inline-block rounded-full bg-amber-light text-amber-dark text-xs font-semibold px-3 py-1">
+          {capacity}
+        </span>
       </div>
     </div>
   );

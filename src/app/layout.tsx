@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MNC Solar - Solar Solutions for Jharkhand & Bihar",
-  description: "Mahadeva And Company provides reliable solar solutions across Jharkhand and Bihar, offering complete home solar systems, village power solutions, and battery-based off-grid systems.",
+  description: "Mahadeva And Company provides reliable solar solutions across Jharkhand and Bihar. On-grid, off-grid, and hybrid systems from 2 KW to 100 KW for homes, offices, and institutions.",
 };
 
 export default function RootLayout({
