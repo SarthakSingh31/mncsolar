@@ -1,121 +1,105 @@
-import Link from 'next/link';
-import { Mail, Phone, MapPin, Sun } from 'lucide-react';
-import { COMPANY_NAME, COMPANY_SHORT, CONTACT_INFO, SERVICE_AREAS } from '@/lib/constants';
+import Link from "next/link";
+import { Sun, Phone, Mail, MapPin } from "lucide-react";
+import {
+  NAV_ITEMS,
+  CONTACT_INFO,
+  COMPANY_NAME,
+  COMPANY_SHORT,
+  SERVICE_AREAS,
+} from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-[#0f172a] text-slate-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-2 bg-gradient-primary rounded-lg shadow-solar">
-                <Sun className="h-8 w-8 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">{COMPANY_SHORT}</span>
-            </div>
-            <p className="text-gray-300 mb-4">
-              {COMPANY_NAME} provides reliable solar solutions across {SERVICE_AREAS.join(' and ')}, 
-              bringing clean energy to homes and communities.
+          {/* Column 1: Brand */}
+          <div className="md:col-span-1">
+            <Link href="/" className="flex items-center gap-2 mb-3">
+              <Sun className="h-6 w-6 text-amber-400" />
+              <span className="text-white font-bold text-lg">{COMPANY_SHORT}</span>
+            </Link>
+            <p className="text-amber-400 text-sm font-medium mb-3">
+              Powering Jharkhand &amp; Bihar with clean solar energy
             </p>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-primary-500/20 rounded-lg group-hover:bg-primary-500/30 transition-colors">
-                  <Mail className="h-4 w-4 text-primary-400" />
-                </div>
-                <a 
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  {CONTACT_INFO.email}
-                </a>
-              </div>
-              <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-accent-500/20 rounded-lg group-hover:bg-accent-500/30 transition-colors">
-                  <Phone className="h-4 w-4 text-accent-400" />
-                </div>
-                <a 
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="text-slate-300 hover:text-white transition-colors"
-                >
-                  {CONTACT_INFO.phone}
-                </a>
-              </div>
-              <div className="flex items-start space-x-3 group">
-                <div className="p-2 bg-primary-500/20 rounded-lg group-hover:bg-primary-500/30 transition-colors mt-0.5">
-                  <MapPin className="h-4 w-4 text-primary-400" />
-                </div>
-                <span className="text-slate-300">{CONTACT_INFO.address}</span>
-              </div>
-            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Trusted solar installation partner serving residential, commercial,
+              and institutional clients across Jharkhand and Bihar since 2019.
+            </p>
           </div>
 
+          {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary-300">Quick Links</h3>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-2">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Contact */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Contact
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-slate-300 hover:text-primary-400 transition-colors flex items-center group">
-                  <span className="w-1 h-1 bg-primary-400 rounded-full mr-3 group-hover:w-2 transition-all"></span>
-                  About Us
-                </Link>
+                <a
+                  href={`tel:${CONTACT_INFO.phone}`}
+                  className="flex items-start gap-2 text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                >
+                  <Phone className="h-4 w-4 mt-0.5 shrink-0 text-amber-400" />
+                  <span>{CONTACT_INFO.phone}</span>
+                </a>
               </li>
               <li>
-                <Link href="/services" className="text-slate-300 hover:text-primary-400 transition-colors flex items-center group">
-                  <span className="w-1 h-1 bg-primary-400 rounded-full mr-3 group-hover:w-2 transition-all"></span>
-                  Our Services
-                </Link>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="flex items-start gap-2 text-slate-400 hover:text-amber-400 text-sm transition-colors"
+                >
+                  <Mail className="h-4 w-4 mt-0.5 shrink-0 text-amber-400" />
+                  <span>{CONTACT_INFO.email}</span>
+                </a>
               </li>
-              <li>
-                <Link href="/contact" className="text-slate-300 hover:text-primary-400 transition-colors flex items-center group">
-                  <span className="w-1 h-1 bg-primary-400 rounded-full mr-3 group-hover:w-2 transition-all"></span>
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-slate-300 hover:text-primary-400 transition-colors flex items-center group">
-                  <span className="w-1 h-1 bg-primary-400 rounded-full mr-3 group-hover:w-2 transition-all"></span>
-                  Book Appointment
-                </Link>
+              <li className="flex items-start gap-2 text-slate-400 text-sm">
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-amber-400" />
+                <span>{CONTACT_INFO.address}</span>
               </li>
             </ul>
           </div>
 
+          {/* Column 4: Service Areas */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-accent-300">Services</h3>
-            <ul className="space-y-3">
-              <li className="text-slate-300 flex items-center">
-                <span className="w-1 h-1 bg-accent-400 rounded-full mr-3"></span>
-                Home Solar Solutions
-              </li>
-              <li className="text-slate-300 flex items-center">
-                <span className="w-1 h-1 bg-accent-400 rounded-full mr-3"></span>
-                Village Power Systems
-              </li>
-              <li className="text-slate-300 flex items-center">
-                <span className="w-1 h-1 bg-accent-400 rounded-full mr-3"></span>
-                Battery-Based Systems
-              </li>
-              <li className="text-slate-300 flex items-center">
-                <span className="w-1 h-1 bg-accent-400 rounded-full mr-3"></span>
-                On-Grid Solutions
-              </li>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              Service Areas
+            </h3>
+            <ul className="space-y-2">
+              {SERVICE_AREAS.map((area) => (
+                <li key={area} className="text-slate-400 text-sm">
+                  {area}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-slate-700/50 pt-8 mt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-2">
-              <span className="w-2 h-2 bg-gradient-primary rounded-full animate-pulse"></span>
-              <p className="text-slate-400 text-sm">
-                Serving {SERVICE_AREAS.join(' & ')} with clean energy solutions
-              </p>
-            </div>
-          </div>
+      {/* Bottom bar */}
+      <div className="border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <p className="text-slate-500 text-sm text-center">
+            &copy; 2024 {COMPANY_NAME}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
