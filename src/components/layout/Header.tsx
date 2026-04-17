@@ -20,7 +20,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Sun className="h-7 w-7 text-amber-400" />
-            <span className="text-white font-bold text-lg tracking-tight">
+            <span className="text-white font-bold text-2xl tracking-tight">
               MNC Solar
             </span>
           </Link>

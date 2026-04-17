@@ -17,7 +17,7 @@ import { CONTACT_INFO, SERVICE_AREAS } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Why MNC Solar | Mahadeva And Company',
   description:
-    'Discover why MNC Solar is Jharkhand & Bihar\'s trusted solar partner — proven expertise, 200+ installations, and a promise to make you a satisfied customer.',
+    'Discover why MNC Solar is Jharkhand & Bihar\'s trusted solar partner — proven expertise, 200+ installations. PMSG Govt of Bihar approved vendor. ISO 9001:2015 certified.',
 };
 
 const BENEFITS = [

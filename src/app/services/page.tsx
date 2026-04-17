@@ -6,7 +6,7 @@ import { SERVICES } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Solar Services | MNC Solar',
   description:
-    'On-grid, off-grid, hybrid, and institutional solar solutions from 2 KW to 100 KW. Professional installation across Jharkhand and Bihar.',
+    'On-grid, off-grid, hybrid, and institutional solar solutions from 2 KW to 100 KW. Professional installation across Jharkhand and Bihar. PMSG Govt of Bihar approved vendor. ISO 9001:2015 certified.',
 };
 
 export default function ServicesPage() {

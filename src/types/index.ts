@@ -3,6 +3,7 @@ export interface ContactInfo {
   phone: string;
   whatsapp: string;
   address: string;
+  registeredAddress: string;
 }
 
 export interface ServiceItem {

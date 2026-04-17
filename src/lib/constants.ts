@@ -4,7 +4,8 @@ export const CONTACT_INFO: ContactInfo = {
   email: 'contact@mncsolar.com',
   phone: '+91 9643805595',
   whatsapp: '919643805595',
-  address: 'BMP-16, Rd Number 1, Maurya Vihar Colony, Khagaul, Patna, Bihar 801105'
+  address: 'BMP-16, Rd Number 1, Maurya Vihar Colony, Khagaul, Patna, Bihar 801105',
+  registeredAddress: '3A, Classics Sarkar Mansion, Circular Road, Ranchi, Jharkhand - 834001'
 };
 
 export const COMPANY_NAME = 'Mahadeva And Company';

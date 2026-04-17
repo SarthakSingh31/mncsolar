@@ -6,7 +6,7 @@ import { CONTACT_INFO, SERVICE_AREAS } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Contact Us | MNC Solar',
   description:
-    'Get in touch with MNC Solar for solar installation in Jharkhand and Bihar. Call +91 9643805595 or visit our office in Patna.',
+    'Get in touch with MNC Solar for solar installation in Jharkhand and Bihar. Call +91 9643805595 or visit our office in Patna. PMSG Govt of Bihar approved vendor. ISO 9001:2015 certified.',
 };
 
 export default function ContactPage() {
@@ -68,11 +68,21 @@ export default function ContactPage() {
               <div className="w-14 h-14 rounded-full bg-amber-light flex items-center justify-center mb-5">
                 <MapPin className="w-7 h-7 text-amber" strokeWidth={2} />
               </div>
+
               <p className="text-xs font-bold uppercase tracking-widest text-slate-text mb-3">
-                Visit Us
+                Operating Office
+              </p>
+              <p className="text-base font-semibold text-navy leading-snug mb-5">
+                {CONTACT_INFO.address}
+              </p>
+
+              <div className="w-12 h-px bg-border mb-5" />
+
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-text mb-3">
+                Registered Office
               </p>
               <p className="text-base font-semibold text-navy leading-snug">
-                {CONTACT_INFO.address}
+                {CONTACT_INFO.registeredAddress}
               </p>
             </div>
           </div>

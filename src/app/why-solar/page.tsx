@@ -5,7 +5,7 @@ import Accordion from '@/components/ui/Accordion';
 export const metadata: Metadata = {
   title: 'Why Go Solar? | MNC Solar',
   description:
-    'Discover the financial, environmental, and technical case for solar energy. Learn how a 5 KW solar plant can save you ₹60 lakh over 30 years and offset 6,462 kg of CO₂ annually.',
+    'Discover the financial, environmental, and technical case for solar energy. Learn how a 5 KW solar plant can save you ₹60 lakh over 30 years. PMSG Govt of Bihar approved vendor. ISO 9001:2015 certified.',
 };
 
 /* ─────────────────────────────────────────────────────────
