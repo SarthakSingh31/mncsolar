@@ -1,6 +1,7 @@
 export interface ContactInfo {
   email: string;
   phone: string;
+  whatsapp: string;
   address: string;
 }
 
@@ -9,19 +10,16 @@ export interface ServiceItem {
   title: string;
   description: string;
   features: string[];
-  icon?: string;
-}
-
-export interface AppointmentFormData {
-  name: string;
-  email: string;
-  phone: string;
-  serviceType: string;
-  preferredDate: string;
-  message?: string;
+  icon: string;
+  capacity: string;
 }
 
 export interface NavItem {
   href: string;
+  label: string;
+}
+
+export interface StatItem {
+  value: string;
   label: string;
 }
