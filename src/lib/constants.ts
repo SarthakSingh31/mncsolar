@@ -39,7 +39,8 @@ export const SERVICES: ServiceItem[] = [
       'High efficiency panels'
     ],
     icon: 'Zap',
-    capacity: '2 KW - 100 KW'
+    capacity: '2 KW - 100 KW',
+    image: '/images/installations/smart-meter.jpg',
   },
   {
     id: 'offgrid',
@@ -53,7 +54,8 @@ export const SERVICES: ServiceItem[] = [
       '24-hour availability'
     ],
     icon: 'Battery',
-    capacity: '2 KW - 50 KW'
+    capacity: '2 KW - 50 KW',
+    image: '/images/installations/battery-bank.jpg',
   },
   {
     id: 'hybrid',
@@ -67,7 +69,8 @@ export const SERVICES: ServiceItem[] = [
       'Smart energy management'
     ],
     icon: 'RefreshCw',
-    capacity: '3 KW - 100 KW'
+    capacity: '3 KW - 100 KW',
+    image: '/images/installations/rooftop-array.jpg',
   },
   {
     id: 'institutional',
@@ -81,7 +84,8 @@ export const SERVICES: ServiceItem[] = [
       'Scalable capacity'
     ],
     icon: 'Building2',
-    capacity: '10 KW - 100 KW'
+    capacity: '10 KW - 100 KW',
+    image: '/images/installations/institutional-building.jpg',
   }
 ];
 

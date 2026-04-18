@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   IndianRupee,
   Leaf,
@@ -11,8 +12,21 @@ import {
   MessageCircle,
   CheckCircle2,
   XCircle,
+  Gem,
+  ClipboardCheck,
+  Satellite,
+  BarChart3,
+  Calculator,
+  Home,
+  Sun,
+  Eye,
+  Ruler,
+  Wind,
+  Plug,
+  Monitor,
 } from 'lucide-react';
 import { CONTACT_INFO, SERVICE_AREAS } from '@/lib/constants';
+import InstallationVideo from '@/components/ui/InstallationVideo';
 
 export const metadata: Metadata = {
   title: 'Why MNC Solar | Mahadeva And Company',
@@ -74,6 +88,69 @@ const AFTER_ITEMS = [
   'No fuel cost whatsoever',
   'Minimal maintenance — just periodic panel cleaning',
   'No dedicated staff needed for power management',
+];
+
+const SITE_SURVEY_STEPS = [
+  {
+    icon: Satellite,
+    title: 'Satellite Mapping',
+    description:
+      'We study your roof/ground orientation (azimuth) using satellite imagery to determine optimal panel placement.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Energy Usage',
+    description:
+      'We study your past 12 months electricity bill to determine the required plant size.',
+  },
+  {
+    icon: Calculator,
+    title: 'Load Calculation',
+    description:
+      'We make a comprehensive list of all electrical items and calculate the load, including the maximum amperage the system must handle at any point of time.',
+  },
+  {
+    icon: Home,
+    title: 'Roof Inspection',
+    description:
+      'We evaluate the structure\'s integrity, roofing material and remaining life span.',
+  },
+  {
+    icon: Sun,
+    title: 'Shading Analysis',
+    description:
+      'We check for shadow areas of your roof/ground as shadows severely reduce production.',
+  },
+  {
+    icon: Eye,
+    title: 'Check Obstructions',
+    description:
+      'We take into account obstructions like pillars, columns, vents and antennas on your roof.',
+  },
+  {
+    icon: Ruler,
+    title: 'Roof Measurement',
+    description:
+      'After measuring the length and breadth of the roof section, we work out a detailed sketch for the clean area for panel installation.',
+  },
+  {
+    icon: Wind,
+    title: 'Structure Identification',
+    description:
+      'Taking into account maximum wind speed in the area, we work out rafter and purlin spacing to ensure a very secure and robust panel mounting.',
+  },
+  {
+    icon: Plug,
+    title: 'Electrical System Review',
+    description:
+      'We study your electric supply and distribution system in detail — including the main panel, its amperage and safety equipment installed.',
+  },
+  {
+    icon: Monitor,
+    title: 'Control Room Feasibility',
+    description:
+      'We study the feasibility of the place desired by you for erection of the control room and offer our recommendations.',
+  },
 ];
 
 export default function WhyMNCSolarPage() {
@@ -158,25 +235,107 @@ export default function WhyMNCSolarPage() {
               </p>
             </div>
 
-            {/* Right – 2×2 stat grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {EXPERTISE_STATS.map(({ value, label }) => (
-                <div
-                  key={label}
-                  className="bg-white rounded-xl border border-border p-6 text-center shadow-sm"
-                >
-                  <p className="text-3xl md:text-4xl font-extrabold text-amber leading-none mb-2">
-                    {value}
-                  </p>
-                  <p className="text-slate-text text-sm font-medium">{label}</p>
+            {/* Right – photos/video + stat grid */}
+            <div className="flex flex-col gap-4">
+              {/* Installation media pair */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                  <InstallationVideo
+                    src="/videos/rooftop-closeup.mp4"
+                    poster="/images/installations/rooftop-closeup-poster.jpg"
+                    alt="Solar panel installation walkthrough on rooftop"
+                  />
                 </div>
-              ))}
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src="/images/installations/battery-bank.jpg"
+                    alt="Battery bank installation by MNC Solar"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              {/* 2×2 stat grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {EXPERTISE_STATS.map(({ value, label }) => (
+                  <div
+                    key={label}
+                    className="bg-white rounded-xl border border-border p-5 text-center shadow-sm"
+                  >
+                    <p className="text-2xl md:text-3xl font-extrabold text-amber leading-none mb-1">
+                      {value}
+                    </p>
+                    <p className="text-slate-text text-xs font-medium">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Section 4: Case Study ────────────────────────────────────── */}
+      {/* ── Section 4: Quality & Site Survey ──────────────────────────── */}
+      <section className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Quality commitment callout */}
+          <div className="border-l-4 border-amber bg-amber-light/30 rounded-r-xl px-8 py-6 mb-16">
+            <div className="flex items-center gap-3 mb-3">
+              <Gem className="w-5 h-5 text-amber shrink-0" strokeWidth={2} />
+              <p className="text-amber text-xs font-bold uppercase tracking-widest">
+                Quality Commitment
+              </p>
+            </div>
+            <p className="text-navy text-base md:text-lg leading-relaxed font-medium">
+              We use the best quality and modern, state of the art components in
+              installations of our projects. This is to give you best quality
+              for your money.
+            </p>
+          </div>
+
+          {/* Site survey process */}
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <ClipboardCheck className="w-5 h-5 text-amber" strokeWidth={2} />
+              <p className="text-amber text-xs font-bold uppercase tracking-widest">
+                Our Process
+              </p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-3">
+              Thorough Site Survey
+            </h2>
+            <p className="text-slate-text text-base leading-relaxed max-w-2xl mx-auto">
+              We recommend solutions only after thoroughly understanding your
+              requirements. We explore your expectations and conduct a detailed
+              site recce before any installation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {SITE_SURVEY_STEPS.map(({ icon: Icon, title, description }, idx) => (
+              <div
+                key={title}
+                className="flex gap-4 rounded-xl border border-border bg-white p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              >
+                {/* Number badge */}
+                <div className="flex flex-col items-center gap-2 shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-amber flex items-center justify-center">
+                    <span className="text-navy text-sm font-extrabold">{idx + 1}</span>
+                  </div>
+                  <Icon className="w-4 h-4 text-slate-text" strokeWidth={1.5} />
+                </div>
+                {/* Content */}
+                <div className="min-w-0">
+                  <h3 className="font-bold text-navy text-sm mb-1">{title}</h3>
+                  <p className="text-slate-text text-sm leading-relaxed">{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 5: Case Study ────────────────────────────────────── */}
       <section className="bg-white py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Callout box with amber left border */}
@@ -242,6 +401,37 @@ export default function WhyMNCSolarPage() {
             </div>
           </div>
 
+          {/* Equipment evidence strip */}
+          <div className="grid grid-cols-3 gap-4 mb-12">
+            {[
+              {
+                src: '/images/installations/switchgear-panel.jpg',
+                alt: 'Switchgear and electrical panel installed by MNC Solar',
+                label: 'Switchgear Panel',
+              },
+              {
+                src: '/images/installations/inverter-display.jpg',
+                alt: 'Inverter display showing 20.3 kW solar generation',
+                label: 'Live Solar: 20.3 kW',
+              },
+              {
+                src: '/images/installations/smart-meter.jpg',
+                alt: 'Genus smart meter for net metering',
+                label: 'Smart Meter',
+              },
+            ].map(({ src, alt, label }) => (
+              <div
+                key={label}
+                className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm"
+              >
+                <Image src={src} alt={alt} fill sizes="33vw" className="object-cover" />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/80 to-transparent p-3">
+                  <p className="text-white text-xs font-semibold">{label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Resolution */}
           <div className="border-l-4 border-amber bg-navy/5 rounded-r-xl px-8 py-5">
             <p className="text-navy text-base leading-relaxed font-medium">
@@ -253,7 +443,7 @@ export default function WhyMNCSolarPage() {
         </div>
       </section>
 
-      {/* ── Section 5: Service Areas ─────────────────────────────────── */}
+      {/* ── Section 6: Service Areas ─────────────────────────────────── */}
       <section className="bg-navy py-20 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-amber text-xs font-bold uppercase tracking-widest mb-4">
@@ -282,7 +472,7 @@ export default function WhyMNCSolarPage() {
         </div>
       </section>
 
-      {/* ── Section 6: Final CTA ─────────────────────────────────────── */}
+      {/* ── Section 7: Final CTA ─────────────────────────────────────── */}
       <section
         style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}
         className="py-20"

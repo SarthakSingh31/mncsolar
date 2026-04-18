@@ -1,8 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Zap, Battery, RefreshCw, Building2, Phone, MessageCircle } from 'lucide-react';
-import StatCard from '@/components/ui/StatCard';
-import { STATS, SERVICES, CONTACT_INFO } from '@/lib/constants';
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Battery,
+  Building2,
+  MessageCircle,
+  Phone,
+  RefreshCw,
+  Zap,
+} from "lucide-react";
+import StatCard from "@/components/ui/StatCard";
+import { CONTACT_INFO, SERVICES, STATS } from "@/lib/constants";
 
 const SERVICE_ICONS = {
   Zap,
@@ -25,8 +32,9 @@ export default function HomePage() {
             Half a Lifetime<br />of Free Electricity
           </h1>
           <p className="text-white/65 text-lg max-w-md mb-10 leading-relaxed">
-            How would you like free electricity — not for a day, but for the next 25–30 years?
-            200+ installations across mini-grids and institutions.
+            How would you like free electricity — not for a day, but for the
+            next 25–30 years? 200+ installations across mini-grids and
+            institutions.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -45,14 +53,12 @@ export default function HomePage() {
         </div>
 
         {/* Right – solar image with diagonal clip */}
-        <div
-          className="hidden md:block absolute inset-y-0 right-0 w-[50%]"
-          style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        >
+        <div className="hidden md:block absolute inset-y-0 right-0 w-[50%]">
           <Image
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"
-            alt="Solar panels installation"
+            src="/images/installations/solar-panels-aerial.jpg"
+            alt="Aerial view of solar panel installation by MNC Solar"
             fill
+            sizes="50vw"
             className="object-cover"
             priority
           />
@@ -63,9 +69,10 @@ export default function HomePage() {
         {/* Mobile-only image (below text, no clip-path) */}
         <div className="relative w-full h-56 md:hidden">
           <Image
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"
-            alt="Solar panels installation"
+            src="/images/installations/solar-panels-aerial-mobile.jpg"
+            alt="Aerial view of solar panel installation by MNC Solar"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -77,7 +84,11 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {STATS.map((stat) => (
-              <StatCard key={stat.label} value={stat.value} label={stat.label} />
+              <StatCard
+                key={stat.label}
+                value={stat.value}
+                label={stat.label}
+              />
             ))}
           </div>
         </div>
@@ -99,7 +110,8 @@ export default function HomePage() {
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => {
-              const Icon = SERVICE_ICONS[service.icon as keyof typeof SERVICE_ICONS];
+              const Icon =
+                SERVICE_ICONS[service.icon as keyof typeof SERVICE_ICONS];
               return (
                 <Link
                   key={service.id}
@@ -107,7 +119,9 @@ export default function HomePage() {
                   className="group bg-white rounded-xl border border-border p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col gap-4"
                 >
                   <div className="w-11 h-11 rounded-lg bg-amber-light flex items-center justify-center shrink-0">
-                    {Icon && <Icon className="w-5 h-5 text-amber" strokeWidth={2} />}
+                    {Icon && (
+                      <Icon className="w-5 h-5 text-amber" strokeWidth={2} />
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold text-navy text-base mb-1 group-hover:text-amber transition-colors">
@@ -152,13 +166,15 @@ export default function HomePage() {
                   <p className="text-4xl md:text-5xl font-extrabold text-amber leading-none">
                     252
                   </p>
-                  <p className="text-white/60 text-sm mt-2">equivalent trees planted</p>
+                  <p className="text-white/60 text-sm mt-2">
+                    equivalent trees planted
+                  </p>
                 </div>
               </div>
 
               <p className="text-white/70 text-base leading-relaxed max-w-md">
-                Save up to ₹60 lakh over 30 years. With compound interest, that snowballs
-                to nearly a crore.
+                Save up to ₹60 lakh over 30 years. With compound interest, that
+                snowballs to nearly a crore.
               </p>
             </div>
 
@@ -168,6 +184,7 @@ export default function HomePage() {
                 src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80"
                 alt="Green nature and trees representing environmental impact"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-navy/30 rounded-2xl" />
@@ -178,7 +195,9 @@ export default function HomePage() {
 
       {/* ── Section 5: Final CTA ─────────────────────────────────────── */}
       <section
-        style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}
+        style={{
+          background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+        }}
         className="py-20"
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -190,7 +209,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
+              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
               className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-light transition-colors shadow-md"
             >
               <Phone className="w-4 h-4" strokeWidth={2} />

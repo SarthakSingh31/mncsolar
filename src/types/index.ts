@@ -13,6 +13,7 @@ export interface ServiceItem {
   features: string[];
   icon: string;
   capacity: string;
+  image?: string;
 }
 
 export interface NavItem {

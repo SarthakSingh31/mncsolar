@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Zap, Battery, RefreshCw, Building2, Check, LucideIcon } from "lucide-react";
 import { ServiceItem } from "@/types";
 
@@ -16,37 +17,54 @@ export default function ServiceCard({
   features,
   icon,
   capacity,
+  image,
 }: ServiceCardProps) {
   const Icon = iconMap[icon] ?? Zap;
 
   return (
-    <div className="flex flex-col bg-slate-light rounded-2xl border border-border p-6 gap-4">
-      {/* Icon */}
-      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-light text-amber">
-        <Icon size={24} strokeWidth={1.75} />
-      </div>
+    <div className="flex flex-col bg-slate-light rounded-2xl border border-border overflow-hidden">
+      {/* Image banner */}
+      {image && (
+        <div className="relative h-48 w-full">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
+        </div>
+      )}
 
-      {/* Title */}
-      <h3 className="text-xl font-bold text-navy leading-snug">{title}</h3>
+      <div className="flex flex-col p-6 gap-4">
+        {/* Icon */}
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-light text-amber">
+          <Icon size={24} strokeWidth={1.75} />
+        </div>
 
-      {/* Description */}
-      <p className="text-sm text-slate-text leading-relaxed">{description}</p>
+        {/* Title */}
+        <h3 className="text-xl font-bold text-navy leading-snug">{title}</h3>
 
-      {/* Features */}
-      <ul className="flex flex-col gap-2 flex-1">
-        {features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2 text-sm text-slate-text-dark">
-            <Check size={15} className="mt-0.5 shrink-0 text-amber" strokeWidth={2.5} />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+        {/* Description */}
+        <p className="text-sm text-slate-text leading-relaxed">{description}</p>
 
-      {/* Capacity badge */}
-      <div className="mt-2">
-        <span className="inline-block rounded-full bg-amber-light text-amber-dark text-xs font-semibold px-3 py-1">
-          {capacity}
-        </span>
+        {/* Features */}
+        <ul className="flex flex-col gap-2 flex-1">
+          {features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2 text-sm text-slate-text-dark">
+              <Check size={15} className="mt-0.5 shrink-0 text-amber" strokeWidth={2.5} />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Capacity badge */}
+        <div className="mt-2">
+          <span className="inline-block rounded-full bg-amber-light text-amber-dark text-xs font-semibold px-3 py-1">
+            {capacity}
+          </span>
+        </div>
       </div>
     </div>
   );
