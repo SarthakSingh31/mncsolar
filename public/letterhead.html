@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MNC Solar — Letterhead</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0f172a;
+    background: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.15);
+    overflow: hidden;
+  }
+
+  @media print {
+    html, body { background: #ffffff; }
+    .sheet { margin: 0; box-shadow: none; }
+  }
+
+  /* HEADER */
+  .header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14mm 15mm 11mm;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #f59e0b 0%, #f59e0b 38%, #334155 38%, #334155 100%);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .mark {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+  }
+  .wordmark .name {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .wordmark .name .amber { color: #f59e0b; }
+  .wordmark .name sup {
+    font-size: 10px;
+    font-weight: 500;
+    color: #cbd5e1;
+    margin-top: 3px;
+  }
+  .wordmark .subtitle {
+    font-size: 10px;
+    color: #cbd5e1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .wordmark .tagline {
+    font-size: 9.5px;
+    color: #f59e0b;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  .cert-stack {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f8fafc;
+    padding: 5px 10px;
+    border: 1px solid #334155;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .cert .dot {
+    width: 6px; height: 6px;
+    background: #f59e0b;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* CONTACT STRIP */
+  .contact-strip {
+    padding: 4.5mm 15mm;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 10.5px;
+    color: #334155;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 0.02em;
+  }
+  .contact-item svg { flex-shrink: 0; }
+  .contact-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #cbd5e1;
+  }
+
+  /* MAIN BODY */
+  .body {
+    flex: 1;
+    padding: 18mm 20mm;
+    position: relative;
+    min-height: 180mm;
+  }
+  .watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.045;
+    pointer-events: none;
+    user-select: none;
+  }
+  .watermark svg { display: block; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: auto;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #334155 0%, #334155 62%, #f59e0b 62%, #f59e0b 100%);
+  }
+
+  .addresses {
+    padding: 8mm 15mm 6mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9mm;
+    background: #ffffff;
+  }
+  .addr {
+    padding-left: 9px;
+    border-left: 2px solid #e2e8f0;
+    position: relative;
+  }
+  .addr.primary { border-left-color: #f59e0b; }
+
+  .addr-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 3px;
+  }
+  .addr.primary .addr-label { color: #f59e0b; }
+
+  .addr-city {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+  }
+  .addr-body {
+    font-size: 9.5px;
+    line-height: 1.55;
+    color: #64748b;
+  }
+
+  .footer-bar {
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 4.5mm 15mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+  }
+  .footer-bar .group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-bar .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-bar strong {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .footer-bar .divider {
+    width: 1px;
+    height: 10px;
+    background: #334155;
+  }
+  .footer-bar .accent {
+    color: #f59e0b;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Brand SVG colors */
+  .mark .ray { stroke: #f59e0b; }
+  .mark .core { fill: #f59e0b; }
+  .mark .panel { fill: #1e3a8a; }
+  .mark .panel-line { stroke: #ffffff; opacity: 0.6; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-row">
+        <div class="brand">
+          <!-- Brand mark: clean sun inside amber ring -->
+          <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.45"/>
+            <circle cx="32" cy="32" r="11.5" fill="#f59e0b"/>
+            <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+              <line x1="32" y1="8"  x2="32" y2="15"/>
+              <line x1="32" y1="49" x2="32" y2="56"/>
+              <line x1="8"  y1="32" x2="15" y2="32"/>
+              <line x1="49" y1="32" x2="56" y2="32"/>
+              <line x1="14.5" y1="14.5" x2="19.5" y2="19.5"/>
+              <line x1="44.5" y1="44.5" x2="49.5" y2="49.5"/>
+              <line x1="14.5" y1="49.5" x2="19.5" y2="44.5"/>
+              <line x1="44.5" y1="19.5" x2="49.5" y2="14.5"/>
+            </g>
+          </svg>
+
+          <div class="wordmark">
+            <div class="name">
+              <span>MNC</span><span class="amber">SOLAR</span><sup>™</sup>
+            </div>
+            <div class="tagline">Powering Jharkhand &amp; Bihar</div>
+          </div>
+        </div>
+
+        <div class="cert-stack">
+          <span class="cert"><span class="dot"></span>ISO 9001:2015 Certified</span>
+          <span class="cert"><span class="dot"></span>PMSG · Govt. of Bihar Vendor</span>
+          <span class="cert"><span class="dot"></span>MSME Registered</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTACT STRIP -->
+    <div class="contact-strip">
+      <span class="contact-item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>+91 96438 05595</span>
+      </span>
+
+      <span class="contact-sep"></span>
+
+      <span class="contact-item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>contact@mncsolar.com</span>
+      </span>
+
+      <span class="contact-sep"></span>
+
+      <span class="contact-item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span>www.mncsolar.com</span>
+      </span>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+      <!-- Subtle watermark: sun icon, no huge text -->
+      <div class="watermark">
+        <svg width="320" height="320" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" fill="none">
+            <line x1="32" y1="4"  x2="32" y2="12"/>
+            <line x1="32" y1="52" x2="32" y2="60"/>
+            <line x1="4"  y1="32" x2="12" y2="32"/>
+            <line x1="52" y1="32" x2="60" y2="32"/>
+            <line x1="11.8" y1="11.8" x2="17.5" y2="17.5"/>
+            <line x1="46.5" y1="46.5" x2="52.2" y2="52.2"/>
+            <line x1="11.8" y1="52.2" x2="17.5" y2="46.5"/>
+            <line x1="46.5" y1="17.5" x2="52.2" y2="11.8"/>
+          </g>
+          <circle cx="32" cy="32" r="13" fill="#f59e0b"/>
+        </svg>
+      </div>
+      <!-- Letter content area intentionally blank -->
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="addresses">
+        <div class="addr primary">
+          <div class="addr-label">Regd. Office</div>
+          <div class="addr-city">Ranchi</div>
+          <div class="addr-body">
+            3A Classics, Sarkar Mansion,<br/>
+            Circular Road, Ranchi,<br/>
+            Jharkhand &mdash; 834001
+          </div>
+        </div>
+
+        <div class="addr">
+          <div class="addr-label">Branch Office</div>
+          <div class="addr-city">Patna</div>
+          <div class="addr-body">
+            C1, Road No. 1, Maurya Vihar<br/>
+            Colony, Khagaul, Patna,<br/>
+            Bihar &mdash; 801105
+          </div>
+        </div>
+
+        <div class="addr">
+          <div class="addr-label">Branch Office</div>
+          <div class="addr-city">Delhi NCR</div>
+          <div class="addr-body">
+            GF-55, Ashiana Greens,<br/>
+            Indirapuram, Ghaziabad,<br/>
+            Uttar Pradesh &mdash; 201010
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <div class="group">
+          <span class="item">GST&nbsp;&nbsp;<strong>20ACKPA6933C1Z9</strong></span>
+          <span class="divider"></span>
+          <span class="item">MSME Udyam&nbsp;&nbsp;<strong>JH-20-0075236</strong></span>
+        </div>
+        <div class="group">
+          <span class="accent">Clean Energy · Since 2019</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
