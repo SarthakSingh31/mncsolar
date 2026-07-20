@@ -1,0 +1,126 @@
+{{#> layout}}
+{{!-- Section 1: Hero --}}
+<section class="hero">
+  <div class="hero__panel">
+    <p class="hero__eyebrow">Jharkhand &amp; Bihar's Trusted Solar Partner</p>
+    <h1 class="hero__title">Half a Lifetime<br>of Free Electricity</h1>
+    <p class="hero__text">
+      How would you like free electricity — not for a day, but for the
+      next 25–30 years? 200+ installations across mini-grids and
+      institutions.
+    </p>
+    <div class="hero__actions">
+      <a href="/contact" class="btn-hero-amber">Get Free Quote →</a>
+      <a href="/services" class="btn-hero-outline">Our Services</a>
+    </div>
+  </div>
+
+  <div class="hero__image">
+    <img src="/images/installations/solar-panels-aerial.jpg"
+         alt="Aerial view of solar panel installation by MNC Solar"
+         fetchpriority="high">
+    <div class="hero__image-overlay"></div>
+  </div>
+
+  <div class="hero__image-mobile">
+    <img src="/images/installations/solar-panels-aerial-mobile.jpg"
+         alt="Aerial view of solar panel installation by MNC Solar"
+         fetchpriority="high">
+  </div>
+</section>
+
+{{!-- Section 2: Stats Bar --}}
+<section class="stats-bar">
+  <div class="container container--5xl">
+    <div class="stats-bar__grid">
+      {{#each stats}}
+      <div class="stat-card">
+        <p class="stat-card__value">{{value}}</p>
+        <p class="stat-card__label">{{label}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+{{!-- Section 3: Services Preview --}}
+<section class="services-preview">
+  <div class="container container--6xl">
+    <div class="services-preview__heading">
+      <h2>Our Solar Solutions</h2>
+      <p>From 2 KW residential to 100 KW commercial</p>
+    </div>
+
+    <div class="services-preview__grid">
+      {{#each services}}
+      <a href="/services" class="preview-card">
+        <div class="preview-card__icon">
+          {{#if (eq icon "zap")}}{{> partials/icons/zap class="icon--preview"}}{{/if}}
+          {{#if (eq icon "battery")}}{{> partials/icons/battery class="icon--preview"}}{{/if}}
+          {{#if (eq icon "refresh-cw")}}{{> partials/icons/refresh-cw class="icon--preview"}}{{/if}}
+          {{#if (eq icon "building-2")}}{{> partials/icons/building-2 class="icon--preview"}}{{/if}}
+        </div>
+        <div>
+          <h3 class="preview-card__title">{{title}}</h3>
+          <p class="preview-card__desc">{{description}}</p>
+        </div>
+        <p class="preview-card__capacity">{{capacity}}</p>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+{{!-- Section 4: Environmental Impact --}}
+<section class="impact">
+  <div class="container container--6xl">
+    <div class="impact__grid">
+      <div>
+        <p class="page-hero__eyebrow">Environmental Impact</p>
+        <h2 class="impact__title">A 5 KW Solar Plant Offsets</h2>
+
+        <div class="impact__stats">
+          <div>
+            <p class="impact__stat-value">6,462 kg</p>
+            <p class="impact__stat-label">CO₂ per year</p>
+          </div>
+          <div>
+            <p class="impact__stat-value">252</p>
+            <p class="impact__stat-label">equivalent trees planted</p>
+          </div>
+        </div>
+
+        <p class="impact__note">
+          Save up to ₹60 lakh over 30 years. With compound interest, that
+          snowballs to nearly a crore.
+        </p>
+      </div>
+
+      <div class="impact__media">
+        <img src="/images/nature-trees.jpg"
+             alt="Green nature and trees representing environmental impact"
+             loading="lazy">
+        <div class="impact__media-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 5: Final CTA --}}
+<section class="cta-amber">
+  <div class="container container--3xl cta-amber__inner">
+    <h2 class="cta-amber__title">Ready to Go Solar?</h2>
+    <p class="cta-amber__sub">Don't delay — give us a call and start saving today.</p>
+    <div class="cta-amber__actions">
+      <a href="tel:{{contact.phone_tel}}" class="btn-cta-navy">
+        {{> partials/icons/phone class="icon--btn"}}
+        Call Now
+      </a>
+      <a href="https://wa.me/{{contact.whatsapp}}" target="_blank" rel="noopener noreferrer" class="btn-cta-white">
+        {{> partials/icons/message-circle class="icon--btn"}}
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+{{/layout}}

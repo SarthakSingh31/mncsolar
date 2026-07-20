@@ -1,0 +1,35 @@
+{{#> layout}}
+{{!-- Page Header --}}
+<section class="services-header">
+  <div class="container container--4xl services-header__inner">
+    <p class="eyebrow-xs">What We Offer</p>
+    <h1 class="services-header__title">Our Solar Solutions</h1>
+    <p class="services-header__sub">From 2 KW to 100 KW — we have the right system for your needs</p>
+    <p class="services-header__note">
+      Whether you're powering a single home, a school, or a commercial complex,
+      MNC Solar designs and installs systems that eliminate your electricity bill
+      and deliver reliable power for 25+ years.
+    </p>
+  </div>
+</section>
+
+{{!-- Service Cards Grid --}}
+<section class="services-grid-section">
+  <div class="container container--6xl">
+    <div class="services-grid">
+      {{#each services}}
+      {{> partials/service-card}}
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+{{!-- Bottom CTA --}}
+<section class="cta-amber">
+  <div class="container container--3xl cta-amber__inner">
+    <h2 class="cta-amber__title">Need Help Choosing the Right System?</h2>
+    <p class="cta-amber__sub">Our experts will analyze your requirements and recommend the perfect solar solution.</p>
+    <a href="/contact" class="btn-cta-navy btn-cta-navy--wide">Contact Us →</a>
+  </div>
+</section>
+{{/layout}}

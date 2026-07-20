@@ -1,0 +1,33 @@
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="site-header__row">
+      <a href="/" class="site-header__brand">
+        {{> partials/icons/sun class="icon--logo"}}
+        <span>MNC Solar</span>
+      </a>
+
+      <nav class="site-header__nav">
+        {{#each nav}}
+        <a href="{{href}}" class="nav-link{{#if active}} nav-link--active{{/if}}">{{label}}</a>
+        {{/each}}
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="/contact" class="btn-quote">Get Quote</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+          {{> partials/icons/menu class="nav-toggle__open icon--md"}}
+          {{> partials/icons/x class="nav-toggle__close icon--md"}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-menu__nav">
+      {{#each nav}}
+      <a href="{{href}}" class="mobile-link{{#if active}} mobile-link--active{{/if}}">{{label}}</a>
+      {{/each}}
+      <a href="/contact" class="btn-quote btn-quote--block">Get Quote</a>
+    </nav>
+  </div>
+</header>

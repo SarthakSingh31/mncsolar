@@ -1,0 +1,31 @@
+<div class="service-card">
+  <div class="service-card__media">
+    <img src="{{image}}" alt="{{title}}" loading="lazy">
+    <div class="service-card__overlay"></div>
+  </div>
+
+  <div class="service-card__body">
+    <div class="icon-tile">
+      {{#if (eq icon "zap")}}{{> partials/icons/zap class="icon--tile-md" sw=1.75}}{{/if}}
+      {{#if (eq icon "battery")}}{{> partials/icons/battery class="icon--tile-md" sw=1.75}}{{/if}}
+      {{#if (eq icon "refresh-cw")}}{{> partials/icons/refresh-cw class="icon--tile-md" sw=1.75}}{{/if}}
+      {{#if (eq icon "building-2")}}{{> partials/icons/building-2 class="icon--tile-md" sw=1.75}}{{/if}}
+    </div>
+
+    <h3 class="service-card__title">{{title}}</h3>
+    <p class="service-card__desc">{{description}}</p>
+
+    <ul class="service-card__features">
+      {{#each features}}
+      <li>
+        {{> partials/icons/check class="icon--check" sw=2.5}}
+        <span>{{this}}</span>
+      </li>
+      {{/each}}
+    </ul>
+
+    <div class="service-card__capacity">
+      <span>{{capacity}}</span>
+    </div>
+  </div>
+</div>

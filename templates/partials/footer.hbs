@@ -1,0 +1,63 @@
+<footer class="site-footer">
+  <div class="container site-footer__main">
+    <div class="site-footer__grid">
+      <div>
+        <a href="/" class="site-footer__brand">
+          {{> partials/icons/sun class="icon--footer-logo"}}
+          <span>MNC Solar</span>
+        </a>
+        <p class="site-footer__tagline">Powering Jharkhand &amp; Bihar with clean solar energy</p>
+        <p class="site-footer__about">
+          Trusted solar installation partner serving residential, commercial,
+          and institutional clients across Jharkhand and Bihar since 2019.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Quick Links</h3>
+        <ul class="site-footer__list">
+          {{#each nav}}
+          <li><a href="{{href}}" class="site-footer__link">{{label}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Contact</h3>
+        <ul class="site-footer__list site-footer__list--contact">
+          <li>
+            <a href="tel:{{contact.phone}}" class="site-footer__link site-footer__link--icon">
+              {{> partials/icons/phone class="icon--footer"}}
+              <span>{{contact.phone}}</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:{{contact.email}}" class="site-footer__link site-footer__link--icon">
+              {{> partials/icons/mail class="icon--footer"}}
+              <span>{{contact.email}}</span>
+            </a>
+          </li>
+          <li class="site-footer__item--icon">
+            {{> partials/icons/map-pin class="icon--footer"}}
+            <span>{{contact.address}}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__heading">Service Areas</h3>
+        <ul class="site-footer__list">
+          {{#each service_areas}}
+          <li class="site-footer__area">{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="container">
+      <p>&copy; 2024 MNC Solar. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

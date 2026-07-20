@@ -1,0 +1,363 @@
+{{#> layout}}
+{{!-- Section 1: Hero --}}
+<section class="page-hero page-hero--tall">
+  <div class="container container--3xl page-hero__inner">
+    <p class="page-hero__eyebrow">Our Promise</p>
+    <h1 class="page-hero__title">Why Choose MNC Solar?</h1>
+    <p class="page-hero__subtitle page-hero__subtitle--dim">
+      Not many can meet our expertise and we have a number of satisfied
+      customers to back our claim.
+    </p>
+  </div>
+</section>
+
+{{!-- Section 2: Key Benefits --}}
+<section class="benefits">
+  <div class="container container--6xl">
+    <div class="section-heading">
+      <h2>The MNC Solar Advantage</h2>
+      <p>Five compelling reasons to make the switch today.</p>
+    </div>
+
+    <div class="benefits__grid">
+      <div class="benefit-card">
+        <div class="benefit-card__icon">{{> partials/icons/indian-rupee class="icon--benefit"}}</div>
+        <div>
+          <h3>Electricity Cost Saving</h3>
+          <p>Bring your electricity bill down to zero, whatever your electrical load. Save up to ₹60 lakh over 30 years.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">{{> partials/icons/leaf class="icon--benefit"}}</div>
+        <div>
+          <h3>Safeguard Environment</h3>
+          <p>Use clean, green energy that produces no greenhouse gases. A 5 KW plant offsets 6,462 Kg of CO₂ annually.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">{{> partials/icons/wrench class="icon--benefit"}}</div>
+        <div>
+          <h3>Low Maintenance</h3>
+          <p>Solar systems require minimal maintenance — usually just periodic cleaning of panels.</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card__icon">{{> partials/icons/shield class="icon--benefit"}}</div>
+        <div>
+          <h3>High Durability</h3>
+          <p>Solar panels typically last 25 years and more, providing decades of reliable power.</p>
+        </div>
+      </div>
+      <div class="benefit-card benefit-card--center">
+        <div class="benefit-card__icon">{{> partials/icons/battery-charging class="icon--benefit"}}</div>
+        <div>
+          <h3>Energy Security</h3>
+          <p>Protection against rising energy costs with uninterrupted 24-hour supply for hybrid plants.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 3: Our Expertise --}}
+<section class="expertise">
+  <div class="container container--6xl">
+    <div class="expertise__grid">
+      <div>
+        <p class="page-hero__eyebrow">Proven Track Record</p>
+        <h2 class="expertise__title">Our Expertise</h2>
+        <p class="expertise__para">
+          With over 5 years of hands-on experience in solar installation
+          across Jharkhand and Bihar, our team of trained professionals
+          has delivered reliable power solutions to homes, schools, and
+          commercial establishments alike.
+        </p>
+        <p class="expertise__para expertise__para--last">
+          We handle all system types — on-grid, off-grid, and hybrid —
+          ranging from compact 2 KW residential setups to large-scale 100
+          KW institutional plants. Every installation is backed by our
+          commitment to quality and long-term customer satisfaction.
+        </p>
+      </div>
+
+      <div class="expertise__media-col">
+        <div class="expertise__media-pair">
+          <div class="media-frame">
+            <div class="video-frame">
+              <video id="installation-video" preload="none"
+                     poster="/images/installations/rooftop-closeup-poster.jpg"
+                     aria-label="Solar panel installation walkthrough on rooftop">
+                <source src="/videos/rooftop-closeup.mp4" type="video/mp4">
+              </video>
+              <button type="button" id="video-play" class="video-play" aria-label="Play video">
+                <span class="video-play__circle">
+                  {{> partials/icons/play class="icon--play" fill="currentColor"}}
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="media-frame">
+            <img src="/images/installations/battery-bank.jpg"
+                 alt="Battery bank installation by MNC Solar" loading="lazy">
+          </div>
+        </div>
+        <div class="expertise__stats">
+          <div class="expertise-stat"><p class="expertise-stat__value">5+</p><p class="expertise-stat__label">Years Experience</p></div>
+          <div class="expertise-stat"><p class="expertise-stat__value">200+</p><p class="expertise-stat__label">Installations</p></div>
+          <div class="expertise-stat"><p class="expertise-stat__value">2-100 KW</p><p class="expertise-stat__label">System Range</p></div>
+          <div class="expertise-stat"><p class="expertise-stat__value">3 Types</p><p class="expertise-stat__label">On/Off/Hybrid</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 4: Quality & Site Survey --}}
+<section class="survey">
+  <div class="container container--5xl">
+    <div class="callout callout--quality">
+      <div class="callout__header">
+        {{> partials/icons/gem class="icon--callout"}}
+        <p class="callout__label">Quality Commitment</p>
+      </div>
+      <p class="callout__text callout__text--lg">
+        We use the best quality and modern, state of the art components in
+        installations of our projects. This is to give you best quality
+        for your money.
+      </p>
+    </div>
+
+    <div class="section-heading">
+      <div class="section-heading__icon-row">
+        {{> partials/icons/clipboard-check class="icon--callout"}}
+        <p class="callout__label">Our Process</p>
+      </div>
+      <h2>Thorough Site Survey</h2>
+      <p class="section-heading__note">
+        We recommend solutions only after thoroughly understanding your
+        requirements. We explore your expectations and conduct a detailed
+        site recce before any installation.
+      </p>
+    </div>
+
+    <div class="survey__grid">
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>1</span></div>
+          {{> partials/icons/satellite class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Satellite Mapping</h3>
+          <p>We study your roof/ground orientation (azimuth) using satellite imagery to determine optimal panel placement.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>2</span></div>
+          {{> partials/icons/bar-chart-3 class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Energy Usage</h3>
+          <p>We study your past 12 months electricity bill to determine the required plant size.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>3</span></div>
+          {{> partials/icons/calculator class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Load Calculation</h3>
+          <p>We make a comprehensive list of all electrical items and calculate the load, including the maximum amperage the system must handle at any point of time.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>4</span></div>
+          {{> partials/icons/home class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Roof Inspection</h3>
+          <p>We evaluate the structure's integrity, roofing material and remaining life span.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>5</span></div>
+          {{> partials/icons/sun class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Shading Analysis</h3>
+          <p>We check for shadow areas of your roof/ground as shadows severely reduce production.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>6</span></div>
+          {{> partials/icons/eye class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Check Obstructions</h3>
+          <p>We take into account obstructions like pillars, columns, vents and antennas on your roof.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>7</span></div>
+          {{> partials/icons/ruler class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Roof Measurement</h3>
+          <p>After measuring the length and breadth of the roof section, we work out a detailed sketch for the clean area for panel installation.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>8</span></div>
+          {{> partials/icons/wind class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Structure Identification</h3>
+          <p>Taking into account maximum wind speed in the area, we work out rafter and purlin spacing to ensure a very secure and robust panel mounting.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>9</span></div>
+          {{> partials/icons/plug class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Electrical System Review</h3>
+          <p>We study your electric supply and distribution system in detail — including the main panel, its amperage and safety equipment installed.</p>
+        </div>
+      </div>
+      <div class="survey-step">
+        <div class="survey-step__badge">
+          <div class="survey-step__number"><span>10</span></div>
+          {{> partials/icons/monitor class="icon--step" sw=1.5}}
+        </div>
+        <div class="survey-step__content">
+          <h3>Control Room Feasibility</h3>
+          <p>We study the feasibility of the place desired by you for erection of the control room and offer our recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 5: Case Study --}}
+<section class="case-study">
+  <div class="container container--5xl">
+    <div class="callout callout--case">
+      <p class="callout__label callout__label--tight">Real-World Value</p>
+      <h2 class="case-study__title">Case Study: Uninterrupted Power for Institutions</h2>
+    </div>
+
+    <div class="case-study__problem">
+      <h3>The Problem</h3>
+      <p>
+        A typical school has a heavy daytime load — hundreds of fans and
+        lights running simultaneously — but minimal night load. Every grid
+        outage forces staff to start the generator manually, creating a
+        dark period between the outage and the generator coming online.
+        Add the cost of diesel, generator repair and maintenance, and the
+        need for dedicated manpower, and this cycle repeats multiple times
+        daily for all 365 days of the year.
+      </p>
+    </div>
+
+    <div class="compare">
+      <div class="compare__panel compare__panel--before">
+        <div class="compare__header">
+          {{> partials/icons/x-circle class="icon--compare icon--red"}}
+          <h4 class="compare__title--before">Before — Generator Dependency</h4>
+        </div>
+        <ul>
+          <li>{{> partials/icons/x-circle class="icon--compare-item icon--red-light"}}<span>Generator must be started manually after every outage</span></li>
+          <li>{{> partials/icons/x-circle class="icon--compare-item icon--red-light"}}<span>Dark period between grid failure and generator start</span></li>
+          <li>{{> partials/icons/x-circle class="icon--compare-item icon--red-light"}}<span>Recurring diesel costs add up throughout the year</span></li>
+          <li>{{> partials/icons/x-circle class="icon--compare-item icon--red-light"}}<span>Generator repair and maintenance expenses</span></li>
+          <li>{{> partials/icons/x-circle class="icon--compare-item icon--red-light"}}<span>Dedicated manpower required around the clock</span></li>
+        </ul>
+      </div>
+
+      <div class="compare__panel compare__panel--after">
+        <div class="compare__header">
+          {{> partials/icons/check-circle-2 class="icon--compare icon--green"}}
+          <h4 class="compare__title--after">After — MNC Solar Hybrid System</h4>
+        </div>
+        <ul>
+          <li>{{> partials/icons/check-circle-2 class="icon--compare-item icon--green-light"}}<span>Automatic switchover — zero manual intervention</span></li>
+          <li>{{> partials/icons/check-circle-2 class="icon--compare-item icon--green-light"}}<span>Zero downtime, seamless uninterrupted power</span></li>
+          <li>{{> partials/icons/check-circle-2 class="icon--compare-item icon--green-light"}}<span>No fuel cost whatsoever</span></li>
+          <li>{{> partials/icons/check-circle-2 class="icon--compare-item icon--green-light"}}<span>Minimal maintenance — just periodic panel cleaning</span></li>
+          <li>{{> partials/icons/check-circle-2 class="icon--compare-item icon--green-light"}}<span>No dedicated staff needed for power management</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="evidence">
+      <div class="evidence__item">
+        <img src="/images/installations/switchgear-panel.jpg" alt="Switchgear and electrical panel installed by MNC Solar" loading="lazy">
+        <div class="evidence__caption"><p>Switchgear Panel</p></div>
+      </div>
+      <div class="evidence__item">
+        <img src="/images/installations/inverter-display.jpg" alt="Inverter display showing 20.3 kW solar generation" loading="lazy">
+        <div class="evidence__caption"><p>Live Solar: 20.3 kW</p></div>
+      </div>
+      <div class="evidence__item">
+        <img src="/images/installations/smart-meter.jpg" alt="Genus smart meter for net metering" loading="lazy">
+        <div class="evidence__caption"><p>Smart Meter</p></div>
+      </div>
+    </div>
+
+    <div class="callout callout--resolution">
+      <p>
+        Imagine 24 hours of uninterrupted electricity without any
+        generator and without any dedicated manpower. It is all possible
+        with MNC Solar at the most cost-effective way.
+      </p>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 6: Service Areas --}}
+<section class="serving">
+  <div class="container container--4xl serving__inner">
+    <p class="page-hero__eyebrow">Where We Operate</p>
+    <h2 class="serving__title">Proudly Serving</h2>
+
+    <div class="serving__chips">
+      {{#each service_areas}}
+      <div class="serving-chip">
+        {{> partials/icons/map-pin class="icon--serving"}}
+        <span>{{this}}</span>
+      </div>
+      {{/each}}
+    </div>
+
+    <p class="serving__note">
+      From urban rooftops to rural mini-grids, we bring solar power to
+      communities across eastern India.
+    </p>
+  </div>
+</section>
+
+{{!-- Section 7: Final CTA --}}
+<section class="cta-amber">
+  <div class="container container--3xl cta-amber__inner">
+    <h2 class="cta-amber__title">Give Us a Chance</h2>
+    <p class="cta-amber__sub">We promise that you would be our next satisfied and happy customer.</p>
+    <div class="cta-amber__actions">
+      <a href="tel:{{contact.phone_tel}}" class="btn-cta-navy">
+        {{> partials/icons/phone class="icon--btn"}}
+        Call Now
+      </a>
+      <a href="https://wa.me/{{contact.whatsapp}}" target="_blank" rel="noopener noreferrer" class="btn-cta-white">
+        {{> partials/icons/message-circle class="icon--btn"}}
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+{{/layout}}

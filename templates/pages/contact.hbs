@@ -1,0 +1,77 @@
+{{#> layout}}
+{{!-- Section 1: Header --}}
+<section class="page-hero">
+  <div class="container container--3xl page-hero__inner">
+    <p class="page-hero__eyebrow">Contact Us</p>
+    <h1 class="page-hero__title">Get In Touch</h1>
+    <p class="page-hero__subtitle">Ready to start your solar journey? Reach out to us today.</p>
+  </div>
+</section>
+
+{{!-- Section 2: Contact Cards --}}
+<section class="contact-cards">
+  <div class="container container--5xl">
+    <div class="contact-cards__grid">
+      <div class="contact-card">
+        <div class="icon-circle">
+          {{> partials/icons/phone class="icon--tile"}}
+        </div>
+        <p class="contact-card__label">Call Us</p>
+        <a href="tel:{{contact.phone_tel}}" class="contact-card__phone">{{contact.phone}}</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon-circle">
+          {{> partials/icons/mail class="icon--tile"}}
+        </div>
+        <p class="contact-card__label">Email Us</p>
+        <a href="mailto:{{contact.email}}" class="contact-card__email">{{contact.email}}</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon-circle">
+          {{> partials/icons/map-pin class="icon--tile"}}
+        </div>
+        <p class="contact-card__label">Operating Office</p>
+        <p class="contact-card__address">{{contact.address}}</p>
+        <div class="contact-card__divider"></div>
+        <p class="contact-card__label">Registered Office</p>
+        <p class="contact-card__address contact-card__address--last">{{contact.registered_address}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Section 3: WhatsApp CTA --}}
+<section class="whatsapp-cta">
+  <div class="container container--2xl whatsapp-cta__inner">
+    <p class="whatsapp-cta__eyebrow">Instant Response</p>
+    <h2 class="whatsapp-cta__title">Prefer WhatsApp?</h2>
+    <p class="whatsapp-cta__subtitle">Chat with us instantly</p>
+    <a href="https://wa.me/{{contact.whatsapp}}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+      {{> partials/icons/message-circle class="icon--md"}}
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+{{!-- Section 4: Service Areas --}}
+<section class="coverage">
+  <div class="container container--3xl coverage__inner">
+    <p class="eyebrow-xs">Coverage</p>
+    <h2 class="coverage__title">We Serve</h2>
+    <div class="coverage__chips">
+      {{#each service_areas}}
+      <div class="coverage-chip">
+        {{> partials/icons/map-pin class="icon--chip" sw=2.5}}
+        <span>{{this}}</span>
+      </div>
+      {{/each}}
+    </div>
+    <p class="coverage__note">
+      From urban rooftops in Patna to rural installations across Jharkhand, we bring
+      solar power to your doorstep.
+    </p>
+  </div>
+</section>
+{{/layout}}
